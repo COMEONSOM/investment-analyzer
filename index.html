@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-     <img src="logo.png" alt="Company Logo" class="logo" />
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investment Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Investment Calculator</h1>
-        <div class="calculator">
-            <div class="options">
-                <button onclick="showLumpSumForm()">Lump Sum Investment</button>
-                <button onclick="showSipForm()">Systematic Investment Plan (SIP)</button>
-            </div>
-            <div class="form" id="lumpSumForm">
-                <h2>Lump Sum Investment</h2>
-                <input type="number" id="lumpSumAmount" placeholder="Lump Sum Amount">
-                <input type="number" id="lumpSumYears" placeholder="Investment Duration (Years)">
-                <input type="number" id="lumpSumInterestRate" placeholder="Annual Interest Rate (%)">
-                <button onclick="calculateLumpSum()">Calculate</button>
-                <button onclick="clearForm()">Clear</button>
-                <button onclick="goBack()">Back</button>
-            </div>
-            <div class="form" id="sipForm">
-                <h2>Systematic Investment Plan (SIP)</h2>
-                <input type="number" id="sipMonthlyAmount" placeholder="Monthly Investment Amount">
-                <input type="number" id="sipYears" placeholder="Investment Duration (Years)">
-                <input type="number" id="sipInterestRate" placeholder="Annual Interest Rate (%)">
-                <button onclick="calculateSip()">Calculate</button>
-                <button onclick="clearForm()">Clear</button>
-                <button onclick="goBack()">Back</button>
-            </div>
-            <div id="result" class="result">
-                <div class="result-label">Result</div>
+    <header class="header">
+        <img src="/assets/companylogo.png" alt="Company Logo" class="logo" />
+    </header>
+
+    <main class="container" role="main">
+        <section class="intro">
+            <h1>Know The Future Value Of Your SIP/Lumpsum Investment</h1>
+            <p class="subheading">
+                It is an estimation. Actual value depends on market performance.
+            </p>
+        </section>
+
+        <section class="calculator" aria-labelledby="calc-title">
+
+            <nav class="options" role="tablist" aria-label="Investment Options">
+                <button type="button" class="tab" onclick="showLumpSumForm()" aria-controls="lumpSumForm" aria-selected="false">
+                    Lump Sum Investment
+                </button>
+                <button type="button" class="tab" onclick="showSipForm()" aria-controls="sipForm" aria-selected="false">
+                    Systematic Investment Plan (SIP)
+                </button>
+            </nav>
+
+            <form id="lumpSumForm" class="form hidden" aria-hidden="true">
+                <h3>Lump Sum Investment</h3>
+                <label for="lumpSumAmount">Lump Sum Amount</label>
+                <input type="number" id="lumpSumAmount" placeholder="Enter amount" />
+
+                <label for="lumpSumYears">Investment Duration (Years)</label>
+                <input type="number" id="lumpSumYears" placeholder="Enter years" />
+
+                <label for="lumpSumInterestRate">Annual Interest Rate (%)</label>
+                <input type="number" id="lumpSumInterestRate" placeholder="Enter rate (%)" />
+
+                <div class="form-actions">
+                    <button type="button" onclick="calculateLumpSum()">Calculate</button>
+                    <button type="reset" onclick="clearForm()">Clear</button>
+                    <button type="button" onclick="goBack()">Back</button>
+                </div>
+            </form>
+
+            <form id="sipForm" class="form hidden" aria-hidden="true">
+                <h3>Systematic Investment Plan (SIP)</h3>
+                <label for="sipMonthlyAmount">Monthly Investment Amount</label>
+                <input type="number" id="sipMonthlyAmount" placeholder="Enter amount" />
+
+                <label for="sipYears">Investment Duration (Years)</label>
+                <input type="number" id="sipYears" placeholder="Enter years" />
+
+                <label for="sipInterestRate">Annual Interest Rate (%)</label>
+                <input type="number" id="sipInterestRate" placeholder="Enter rate (%)" />
+
+                <div class="form-actions">
+                    <button type="button" onclick="calculateSip()">Calculate</button>
+                    <button type="reset" onclick="clearForm()">Clear</button>
+                    <button type="button" onclick="goBack()">Back</button>
+                </div>
+            </form>
+
+            <div id="result" class="result" role="status" aria-live="polite">
+                <h4 class="result-label">Result</h4>
                 <div id="resultValue"></div>
             </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 ULVOXO. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
