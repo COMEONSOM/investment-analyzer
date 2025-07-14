@@ -50,9 +50,8 @@ img {
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    max-width: 100%;
+    max-height: 120px;
     margin: auto;
     object-fit: cover;
 }
@@ -222,10 +221,12 @@ img {
     font-size: 0.9rem;
 }
 
-/* ===== Footer ===== */
-.footer {
-    text-align: center;
-    margin-top: var(--spacing-lg);
-    font-size: 0.9rem;
-    color: var(--color-muted);
+/* ───────── Footer ───────── */
+.site-footer {
+  background: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: var(--section-gap);
+  font-size: 0.9rem;
+  color: var(--muted-text);
 }
