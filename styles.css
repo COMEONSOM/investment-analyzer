@@ -1,7 +1,7 @@
 /* ===== Root Variables ===== */
 :root {
-    --color-primary: #007bff;
-    --color-primary-dark: #0056b3;
+    --color-primary: #00067a;
+    --color-primary-dark: #010101;
     --color-secondary: #28a745;
     --color-secondary-dark: #218838;
     --color-danger: #dc3545;
@@ -50,8 +50,8 @@ img {
 }
 
 .logo {
-    max-width: 100%;
-    max-height: 120px;
+    max-width: 160px;
+    height: auto;
     margin: auto;
     object-fit: cover;
 }
